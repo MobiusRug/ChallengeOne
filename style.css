@@ -128,13 +128,6 @@ p{
     margin: 2% 5% 5% 2%;
     width: 7%;
 }
-
-input::-webkit-input-placeholder{
-    color:r#00FF41
-}
-input:-moz-placeholder {
-    color:#00FF41
-}
 .container2.limitSize::-webkit-scrollbar {
     width: 20px;
   }

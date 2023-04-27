@@ -38,8 +38,10 @@
         var output = document.querySelector('.container2')
         var audio = document.getElementById("audio");
 
-        var buttonCopia = document.querySelector('#copia')
-        buttonCopia.style.visibility = "hidden";
+        var buttonCopia = document.querySelector('#copia');
+        //buttonCopia.style.visibility = "hidden";
+
+
 
         function pause(){
             audio.pause();
@@ -106,6 +108,18 @@
                 output.textContent = textoDescriptografado;
             }
             image.classList.add('hidden');
+            output.classList.add('limitSize');
+        }
+
+        function copia(){
+            const texto = document.querySelector('.container2');
+            const tempTexArea = document.createElement('textarea');
+            tempTexArea.value = texto.textContent;
+            document.body.appendChild(tempTexArea);
+            tempTexArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTexArea);
+            alert("Texto baixado da Matrix!");
         }
         
         var buttonCrip = document.querySelector('#criptografar');
@@ -113,6 +127,8 @@
 
         var buttonDescrip = document.querySelector('#descriptografar');
         buttonDescrip.addEventListener('click', descriptografa);
+
+        buttonCopia.addEventListener('click', copia);
 
         window.onload = function() {
             input.value = '';
